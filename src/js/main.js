@@ -19,7 +19,7 @@ var Utils = {
     },
     filter: function (fn, xs) {
         var ys = [];
-        var length = xs.length - 1;
+        var length = xs.length;
         var t;
         var i = 0;
 
@@ -75,8 +75,8 @@ var App = {
         if((p.life -= p.fade) < 0) {
             return null;
         }
-        p.x += (p.vx * 0.3);
-        p.y += (p.vy * 0.3);
+        p.x += (p.vx *= 0.98);
+        p.y += (p.vy *= 0.98);
         return p;
     }
     function drawParticle(p) {
