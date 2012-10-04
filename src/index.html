@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Functional Programming + Typescript = Super Javascript App</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/requestAnimationFrame.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+
+<canvas id="the-canvas" style="image-rendering: optimizequality !important;"></canvas>
+
+<script>
+$(function() {
+	
+
+
+var canvas = document.getElementById("the-canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var ParticleSystem = App.ParticleSystem;
+ParticleSystem.setCanvas( canvas );
+
+$(window).bind( 'mousemove', ParticleSystem.mouseMove );
+
+
+});
+</script>
+
+</body>
+</html>
