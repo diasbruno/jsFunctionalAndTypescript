@@ -26,7 +26,7 @@ var Utils = {
     },
     filter: function( fn, xs ) {
         var ys = [],
-            length = xs.length - 1,
+            length = xs.length,
             t,
             i = 0;
     
@@ -89,8 +89,8 @@ function updateParticle( p:IParticle ) {
 	if ( p === null ) return null;
 	if ( (p.life -= p.fade) < 0 ) return null;
 
-	p.x += (p.vx * 0.3);
-	p.y += (p.vy * 0.3);
+	p.x += (p.vx *= 0.98);
+	p.y += (p.vy *= 0.98);
 
 	return p;
 }
