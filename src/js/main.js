@@ -10,7 +10,7 @@ var Utils = {
             if(length == 0) {
                 return a;
             }
-            x = fs[length - 1](a);
+            x = fs[(length -= 1)](a);
             while(length--) {
                 x = fs[length](x);
             }
@@ -62,16 +62,13 @@ var App = {
         var vy;
         var length = _particles.length;
 
-        for(; i < n; i += 1) {
+        for(; i < 1; i += 1) {
             vx = (-1 * _ceil(_rand() * 4) + _rand() * 2) + 0.5;
             vy = (-1 * _ceil(_rand() * 4) + _rand() * 2) + 0.5;
             _particles[length + i] = new Particle(_mx, _my, vx, vy);
         }
     }
     function updateParticle(p) {
-        if(p === null) {
-            return null;
-        }
         if((p.life -= p.fade) < 0) {
             return null;
         }
